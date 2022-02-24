@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.9.0.min.js"></script>
+</head>
+<body>
+    <div id="graph" style="width:600px;height:250px;">
+        Graph
+    </div>
+    </br>
+    <button type="button" onclick="get_data();">Get Data</button>
+
+    <script type="text/javascript">
+        const server = "http://127.0.0.1:3000"  // either 3000 for nodejs or 8000 for fastapi
+
+        function get_data() {
+            // Get data from the REST API - could be node.js, python... or anything else...
+            axios.get(server + '/data')
+            .then(resp => {                
+                // Get the element where to add the graph
+                element = document.getElementById("graph");
+                
+                // Get all base rents
+                ages = resp.data.map((data) => {return data['age']})
+                console.log(ages)
+
+                // Add a new histogram to page
+                let data = [{
+                    x: ages,
+                    type: 'histogram'
+                }]
+                Plotly.newPlot( element, data, {
+                    margin: { t: 0 } }
+                );
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        }
+    </script>
+</body>
+</html>
