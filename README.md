@@ -1,5 +1,8 @@
 # Web Development meets Data Science - Data Science & Backend Workshop
 
+Getting started with Github Codespaces or Gitpod  
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/NJannasch/techlabs-dortmund-wd-dsai)
+
 ## Description
 This repository contains the materials used in the TechLabs workshop 'Data Science & Backend Workshop'.
 It gives an overview on how Web Development can be combined with Data Science.
