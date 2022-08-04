@@ -9,7 +9,7 @@
     <button type="button" onclick="get_data();">Get Data</button>
 
     <script type="text/javascript">
-        const server = "http://127.0.0.1:8000"  // either 3000 for nodejs or 8000 for fastapi
+        const server = ""  // either 3000 for nodejs or 8000 for fastapi
         function get_data() {
             axios.get(server + '/data')
             .then(resp => {
